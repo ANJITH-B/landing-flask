@@ -1,14 +1,19 @@
-import { forwardRef, HTMLElementType } from "react";
+import { forwardRef } from "react";
 
-const Outro = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => {
-    return (
-        <section
-            ref={ref}
-            className="outro flex justify-center items-center bg-black text-white h-[50vh] w-full text-4xl font-bold"
-        >
-            Don’t Just Train – GRND
-        </section>
-    );
-});
+function OutroSection(
+  props: React.HTMLAttributes<HTMLDivElement>,
+  ref: React.Ref<HTMLDivElement>
+) {
+  return (
+    <section
+      ref={ref}
+      className="absolute bottom-0 opacity-0 flex justify-center items-center bg-black text-white h-[50vh] w-full text-3xl md:text-4xl font-bold"
+    >
+      Don’t Just Train – GRND
+    </section>
+  );
+}
+
+const Outro = forwardRef(OutroSection);
 
 export default Outro;
