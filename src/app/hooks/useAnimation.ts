@@ -30,10 +30,15 @@ export const useAnimation = ({
     mm.add(
       {
         sm: "(max-width: 768px)",
-        lg: "(min-width: 769px)",
+        lg: "(min-width: 769px) and (max-width: 1279px)", // large screens (not XL)
+        xl: "(min-width: 1280px)",
       },
       (context) => {
-        const { sm, lg } = context.conditions as { sm: boolean; lg: boolean };
+        const { sm, lg, xl } = context.conditions as {
+          sm: boolean;
+          lg: boolean;
+          xl: boolean;
+        };
 
         const initialAnim = gsap.timeline({ delay: 1 });
         initialAnim.to(
@@ -87,7 +92,7 @@ export const useAnimation = ({
         );
         tl.fromTo(
           ".text-one",
-          { x: 1500, opacity: 1 },
+          { x: xl ? 2600 : 1500, opacity: 1 },
           { x: -1000, duration: 5 },
           "<1"
         );
@@ -98,12 +103,12 @@ export const useAnimation = ({
         tl.fromTo(
           ".mask",
           { y: 0, scale: 0, opacity: 1 },
-          { scale: 50, duration: 3 },
+          { scale: xl ? 80 : 50, duration: 3 },
           ">-=1.5"
         );
         tl.fromTo(
           ".text-two",
-          { x: 1500, opacity: 1 },
+          { x: xl ? 2600 : 1500, opacity: 1 },
           { x: -2000, duration: 5 },
           "<1"
         );

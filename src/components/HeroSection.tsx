@@ -54,7 +54,7 @@ function HeroSection(
       <h1 className="initial-animation text-4xl md:text-7xl font-merriweather text-black uppercase font-semibold">
         every sip.
       </h1>
-      <p className="initial-animation opacity-0  md:pt-12 text-black/30 font-semibold w- md:w-[40vw] md:leading-8">
+      <p className="initial-animation opacity-0  md:pt-12 text-black/30 font-semibold w- md:w-[40vw] 2xl:w-[30vw] md:leading-8">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry&apos;s standard dummy text
         ever since the 1500s
