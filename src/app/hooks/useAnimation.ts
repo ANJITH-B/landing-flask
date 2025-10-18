@@ -15,17 +15,12 @@ type Refs = {
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const useAnimation = ({
-  modelLoaded,
-  modelRef,
-  groupRef,
-  containerRef,
-  heroRef,
-  footerRef,
-}: Refs) => {
-  useEffect(() => {
-    if (!modelLoaded) return console.log("check");
+export const useAnimation = ( props : Refs) => {
+  const { modelLoaded, modelRef, groupRef, containerRef, heroRef, footerRef } = props ;
 
+  useEffect(() => {
+
+    if (!modelLoaded) return console.log("check");
     const mm = gsap.matchMedia();
     mm.add(
       {
@@ -76,7 +71,7 @@ export const useAnimation = ({
           { y: -1 },
           { y: Math.PI * 2, duration: 10, ease: "power1.inOut" }
         );
-        tl.to(groupRef.current!.rotation, { z: -0.2, duration: 0.5 }, "<1");
+        tl.to(groupRef.current!.rotation, { z: -0.2 }, "<");
 
         tl.fromTo(
           modelRef.current!.position,
@@ -133,7 +128,17 @@ export const useAnimation = ({
           { y: 1.2, duration: 2, ease: "power1.inOut" },
           "<"
         );
+
+      // const rotationSpeed = 0.002; // smaller = slower rotation
+      // const ticker = () => {
+      //   if (modelRef.current) {
+      //     modelRef.current.rotation.y += rotationSpeed;
+      //   }
+      // };
+      // gsap.ticker.add(ticker);
+
         return () => {
+          // gsap.ticker.remove(ticker);
           ScrollTrigger.getAll().forEach((st) => st.kill());
           tl.kill();
         };

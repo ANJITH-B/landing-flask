@@ -28,14 +28,7 @@ export default function Home() {
   const handleModelLoaded = useCallback(() => setModelLoaded(true), []);
 
   useLenis();
-  useAnimation({
-    modelLoaded,
-    modelRef,
-    groupRef,
-    containerRef,
-    heroRef,
-    footerRef,
-  });
+  useAnimation({modelLoaded, modelRef, groupRef, containerRef, heroRef, footerRef });
 
   return (
     <main
