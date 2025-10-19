@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -26,7 +26,11 @@ export default function Home() {
   const [modelLoaded, setModelLoaded] = useState(false);
 
   const handleModelLoaded = useCallback(() => setModelLoaded(true), []);
+  console.log("check - render");
 
+  useEffect(() => {
+    console.log("check - effect");
+  }, []);
   useLenis();
   useAnimation({
     modelLoaded,
@@ -59,7 +63,7 @@ export default function Home() {
         GRND Shaker
       </h1>
       <h1 className="text-two opacity-0 w-[2000px] text-9xl absolute top-[45vh] font-bold uppercase text-white/80 ">
-        Go ready <span className="text-[#242424]">......</span> Shaker Flask
+        Go ready <span className="text-transparent ">......</span> Shaker Flask
       </h1>
       <Point className="para-top top-10 md:top-[10%] left-5 md:left-[15%]" />
       <Point className="para-bottom text-right bottom-10 md:bottom-[10%] right-5 md:right-[15%]" />
