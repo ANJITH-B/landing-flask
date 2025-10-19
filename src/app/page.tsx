@@ -32,14 +32,7 @@ export default function Home() {
     console.log("check - effect");
   }, []);
   useLenis();
-  useAnimation({
-    modelLoaded,
-    modelRef,
-    groupRef,
-    containerRef,
-    heroRef,
-    footerRef,
-  });
+  useAnimation({modelLoaded, modelRef, groupRef, containerRef, heroRef, footerRef });
 
   return (
     <main
