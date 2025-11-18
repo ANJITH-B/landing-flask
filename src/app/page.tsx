@@ -53,7 +53,7 @@ export default function Home() {
       </Canvas>
       <div className="mask opacity-0 rounded-full w-10 h-10 absolute inset-0 bg-[#242424] m-auto" />
       <h1 className="text-one opacity-0 w-[1000px] md:w-full text-9xl absolute top-[45vh] font-bold uppercase text-black font-merriweather ">
-        GRND Shaker
+        GRAND Shaker
       </h1>
       <h1 className="text-two opacity-0 w-[2000px] text-9xl absolute top-[45vh] font-bold uppercase text-white/80 ">
         Go ready <span className="text-transparent ">......</span> Shaker Flask
