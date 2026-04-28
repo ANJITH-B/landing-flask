@@ -29,9 +29,8 @@ export const useAnimation = (props: Refs) => {
         xl: "(min-width: 1280px)",
       },
       (context) => {
-        const { sm, lg, xl } = context.conditions as {
+        const { sm, xl } = context.conditions as {
           sm: boolean;
-          lg: boolean;
           xl: boolean;
         };
 
@@ -131,5 +130,5 @@ export const useAnimation = (props: Refs) => {
         };
       }
     );
-  }, [modelLoaded]);
+  }, [modelLoaded, modelRef, groupRef, containerRef, heroRef, footerRef]);
 };

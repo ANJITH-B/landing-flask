@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -24,19 +24,16 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
-  const [modelLoaded, setModelLoaded] = useState(false);
   const [loadingFinished, setLoadingFinished] = useState(false);
 
-  const handleModelLoaded = useCallback(() => setModelLoaded(true), []);
-
   useLenis();
-  useAnimation({ 
+  useAnimation({
     modelLoaded: loadingFinished, // Only start animations after loader is gone
-    modelRef, 
-    groupRef, 
-    containerRef, 
-    heroRef, 
-    footerRef 
+    modelRef,
+    groupRef,
+    containerRef,
+    heroRef,
+    footerRef
   });
 
   return (
@@ -54,7 +51,7 @@ export default function Home() {
           <ambientLight intensity={5} />
           <directionalLight position={[-2, 1.2, 5]} castShadow intensity={5} />
           <group ref={groupRef}>
-            <FlaskModel modelRef={modelRef} onLoaded={handleModelLoaded} />
+            <FlaskModel modelRef={modelRef} />
           </group>
           <Rig />
         </Canvas>

@@ -15,7 +15,7 @@ const FlaskModel = ({ modelRef, onLoaded }: FlaskModelProps) => {
     if (!scene) return;
     modelRef.current = scene;
     onLoaded?.();
-  }, [modelRef, onLoaded]);
+  }, [modelRef, onLoaded, scene]);
 
   return scene ? <primitive object={scene} scale={0} /> : null;
 };

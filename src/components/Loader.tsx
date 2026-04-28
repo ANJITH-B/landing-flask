@@ -5,7 +5,6 @@ import gsap from "gsap";
 
 const Loader = ({ onFinished }: { onFinished?: () => void }) => {
   const { progress, active } = useProgress();
-  const loaderRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const percentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
